@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 microdnf update -y
 microdnf clean all
 mkdir -p ${HOME}

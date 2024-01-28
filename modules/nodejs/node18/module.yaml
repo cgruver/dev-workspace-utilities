@@ -1,0 +1,9 @@
+schema_version: 1
+name: node18
+version: v1.0
+description: "Installs NodeJS v20"
+args:
+- name: NODE_VERSION
+  value: v18.19.0
+execute:
+- script: ../install.sh

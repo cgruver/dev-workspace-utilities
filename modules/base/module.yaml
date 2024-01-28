@@ -23,7 +23,7 @@ packages:
   - shadow-utils 
   - bash 
   - zsh 
-  - vi 
+  - vim-enhanced
   - wget 
   - jq 
   - ca-certificates

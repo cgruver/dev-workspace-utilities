@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 setcap cap_setuid+ep /usr/bin/newuidmap
 setcap cap_setgid+ep /usr/bin/newgidmap
 touch /etc/subgid /etc/subuid
