@@ -1,0 +1,19 @@
+schema_version: 1
+name: mandrel
+version: v1.0
+description: "Installs Mandrel - GraalVM"
+envs:
+- name: GRAALVM_HOME
+  value: "${TOOLS_DIR}/graalvm"
+execute:
+- script: install.sh
+packages:
+  install:
+  - glibc-devel
+  - zlib-devel
+  - gcc 
+  - libffi-devel 
+  - libstdc++-devel 
+  - gcc-c++ 
+  - glibc-langpack-en 
+  - ca-certificates

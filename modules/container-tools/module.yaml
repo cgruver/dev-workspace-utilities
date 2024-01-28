@@ -1,0 +1,16 @@
+schema_version: 1
+name: container-tools
+version: v1.0
+description: "Installs Podman, Buildah, Scopeo, and sets the container up for container builds"
+envs:
+- name: BUILDAH_ISOLATION
+  value: "chroot"
+execute:
+- script: install.sh
+packages:
+  install:
+  - podman 
+  - buildah 
+  - skopeo 
+  - podman-docker
+  - shadow-utils

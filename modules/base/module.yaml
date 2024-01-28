@@ -1,0 +1,31 @@
+schema_version: 1
+name: base
+version: v1.0
+description: "Setup for base image"
+envs:
+- name: HOME
+  value: /home/user
+- name: PATH
+  value: ${PATH}:/usr/local/tools/bin
+packages:
+  install:
+  - procps-ng 
+  - openssl 
+  - compat-openssl11 
+  - libbrotli 
+  - git 
+  - tar 
+  - gzip 
+  - zip 
+  - xz 
+  - unzip 
+  - which 
+  - shadow-utils 
+  - bash 
+  - zsh 
+  - vi 
+  - wget 
+  - jq 
+  - ca-certificates
+execute:
+- script: init.sh

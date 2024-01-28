@@ -1,0 +1,9 @@
+schema_version: 1
+name: quarkus
+version: v1.0
+description: "Installs the Quarkus CLI"
+envs:
+- name: JBANG_DIR
+  value: "${TOOLS_DIR}/jbang"
+execute:
+- script: install.sh
