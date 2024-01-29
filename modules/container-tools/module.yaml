@@ -13,4 +13,3 @@ packages:
   - buildah 
   - skopeo 
   - podman-docker
-  - shadow-utils

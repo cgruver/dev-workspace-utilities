@@ -5,5 +5,8 @@ description: "Installs NodeJS v20"
 args:
 - name: NODE_VERSION
   value: v20.11.0
+envs:
+- name: PATH
+  value: ${PATH}:/usr/local/node/bin
 execute:
-- script: ../install.sh
+- script: install.sh

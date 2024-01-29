@@ -2,11 +2,13 @@ schema_version: 1
 name: base
 version: v1.0
 description: "Setup for base image"
+artifacts:
+- name: entrypoint
+  path: entrypoint.sh
+  target: entrypoint.sh
 envs:
 - name: HOME
   value: /home/user
-- name: PATH
-  value: ${PATH}:/usr/local/tools/bin
 packages:
   install:
   - procps-ng 

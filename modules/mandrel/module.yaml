@@ -4,7 +4,10 @@ version: v1.0
 description: "Installs Mandrel - GraalVM"
 envs:
 - name: GRAALVM_HOME
-  value: "${TOOLS_DIR}/graalvm"
+  value: "/usr/local/graalvm"
+args:
+- name: MANDREL_VERSION
+  value: 23.0.1.2-Final
 execute:
 - script: install.sh
 packages:
