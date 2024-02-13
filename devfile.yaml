@@ -5,8 +5,9 @@ metadata:
   name: dev-workspace-utilities
 components:
 - name: dev-tools
-  container: 
-    image: quay.io/cgruver0/che/dev-tools:latest
+  container:
+    image: image-registry.openshift-image-registry.svc:5000/devspaces-images/base-image:latest 
+    # image: quay.io/cgruver0/che/dev-tools:latest
     # image: image-registry.openshift-image-registry.svc:5000/dev-tools/dev-tools:latest
     memoryLimit: 6Gi
     mountSources: true

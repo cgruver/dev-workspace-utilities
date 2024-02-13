@@ -24,6 +24,8 @@ RUN microdnf --disableplugin=subscription-manager install -y openssl compat-open
     setcap cap_setgid+ep /usr/bin/newgidmap ; \
     touch /etc/subgid /etc/subuid ; \
     pip install -U cekit ; \
+    ln -s /projects/bin/oc /usr/local/bin/oc ; \
+    ln -s /projects/bin/kubectl /usr/local/bin/kubectl ; \
     chmod +x /entrypoint.sh ; \
     chmod -R g=u /etc/passwd /etc/group /etc/subuid /etc/subgid /home ${WORK_DIR}
 

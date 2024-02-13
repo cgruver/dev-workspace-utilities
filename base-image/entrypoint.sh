@@ -26,4 +26,6 @@ then
   (echo "HISTFILE=${HOME}/.zsh_history"; echo "HISTSIZE=1000"; echo "SAVEHIST=1000") > ${HOME}/.zshrc
 fi
 
+podman login -u $(oc whoami) -p $(oc whoami -t)  image-registry.openshift-image-registry.svc:5000
+
 exec "$@"
