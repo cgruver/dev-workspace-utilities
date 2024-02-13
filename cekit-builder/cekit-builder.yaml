@@ -1,24 +1,24 @@
 apiVersion: image.openshift.io/v1
 kind: ImageStream
 metadata:
-  name: base-image
+  name: cekit-builder
   namespace: devspaces-images
 ---
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
-  name: base-image
+  name: cekit-builder
   namespace: devspaces-images
 spec:
   source:
     git:
       uri: https://github.com/cgruver/dev-workspace-utilities.git
       ref: main
-    contextDir: "base-image"
+    contextDir: "cekit-builder"
   strategy:
     dockerStrategy:
-      dockerfilePath: "./base-image.Containerfile"
+      dockerfilePath: "./cekit-builder.Containerfile"
   output:
     to:
       kind: ImageStreamTag
-      name: base-image:latest
+      name: cekit-builder:latest
