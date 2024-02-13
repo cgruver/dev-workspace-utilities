@@ -1,0 +1,24 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: base-image
+  namespace: devspaces-images
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: base-image
+  namespace: devspaces-images
+spec:
+  source:
+    git:
+      uri: https://github.com/cgruver/dev-workspace-utilities.git
+      ref: main
+    contextDir: "base-image"
+  strategy:
+    dockerStrategy:
+      dockerfilePath: "./base-image.Containerfile"
+  output:
+    to:
+      kind: ImageStreamTag
+      name: base-image:latest
