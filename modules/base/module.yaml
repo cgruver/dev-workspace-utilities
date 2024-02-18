@@ -6,9 +6,14 @@ artifacts:
 - name: entrypoint
   path: entrypoint.sh
   target: entrypoint.sh
+- name: entrypoint-nested
+  path: entrypoint-nested.sh
+  target: entrypoint-nested.sh
 envs:
 - name: HOME
   value: /home/user
+- name: BUILDAH_ISOLATION
+  value: "chroot"
 packages:
   install:
   - procps-ng 
@@ -29,5 +34,9 @@ packages:
   - wget 
   - jq 
   - ca-certificates
+  - podman 
+  - buildah 
+  - skopeo 
+  - podman-docker
 execute:
 - script: init.sh

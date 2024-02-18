@@ -1,4 +1,4 @@
-name: dev-tools/dev-workspace-base
+name: dev-tools/dev-workspace-nested
 from: registry.access.redhat.com/ubi9/ubi-minimal
 version: ubi9
 packages:
@@ -9,9 +9,14 @@ modules:
   - path: "../modules"
   install:
   - name: base
+  - name: ansible
+  - name: aws-cli
+  - name: java21
+  - name: maven
+  - name: quarkus
 run:
   entrypoint:
-  - "/entrypoint.sh"
+  - "/entrypoint-nested.sh"
   cmd:
   - "tail"
   - "-f"
