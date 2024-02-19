@@ -12,4 +12,7 @@ podman push image-registry.openshift-image-registry.svc:5000/devspaces-images/ne
 
 cekit --descriptor images/nested.yaml build podman --tag quay.io/cgruver0/che/nested:latest
 podman push quay.io/cgruver0/che/nested:latest
+
+cekit --descriptor images/nested-fedora.yaml build podman --tag quay.io/cgruver0/che/nested-fedora:latest
+podman push quay.io/cgruver0/che/nested-fedora:latest
 ```
