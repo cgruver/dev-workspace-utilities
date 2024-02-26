@@ -22,3 +22,6 @@ touch /etc/subgid /etc/subuid
 chown 0:0 /etc/subgid
 chown 0:0 /etc/subuid
 chmod -R g=u /etc/subuid /etc/subgid
+# Create Sym Links for OpenShift CLI (Assumed to be retrieved by an init-container)
+ln -s /projects/bin/oc /usr/local/bin/oc
+ln -s /projects/bin/kubectl /usr/local/bin/kubectl

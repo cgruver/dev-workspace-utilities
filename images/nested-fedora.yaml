@@ -1,5 +1,5 @@
 name: dev-tools/dev-workspace-nested-fedora
-from: quay.io/fedora/fedora:39
+from: quay.io/fedora/fedora:40
 version: fedora39
 packages:
   manager: dnf
@@ -14,7 +14,7 @@ modules:
   - name: java21
   - name: maven
   - name: quarkus
-  - name: node20
+  - name: node18
 run:
   entrypoint:
   - "/entrypoint-nested.sh"

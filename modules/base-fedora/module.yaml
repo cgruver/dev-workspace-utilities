@@ -19,7 +19,8 @@ envs:
 packages:
   install:
   - procps-ng 
-  - openssl 
+  - openssl
+  - openssh-clients
   - libbrotli 
   - git 
   - tar 
@@ -32,7 +33,7 @@ packages:
   - bash 
   - zsh 
   - vim-enhanced
-  - wget 
+  - wget2
   - jq 
   - ca-certificates
   - podman 
@@ -41,5 +42,6 @@ packages:
   - podman-docker
   - fuse-overlayfs
   - slirp4netns
+  - python3.9
 execute:
 - script: init.sh
