@@ -7,3 +7,4 @@ ${TEMP_DIR}/aws/install
 rm -rf "${TEMP_DIR}"
 pip3 install aws-sam-cli
 pip3 install awscli-local
+chmod -R g=u ${HOME}
