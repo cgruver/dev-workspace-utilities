@@ -24,7 +24,7 @@ spec:
     maxNumberOfWorkspacesPerUser: -1
     maxNumberOfRunningWorkspacesPerUser: 5
     containerBuildConfiguration:
-      openShiftSecurityContextConstraint: nested-containers
+      openShiftSecurityContextConstraint: container-build
     disableContainerBuildCapabilities: false
     defaultComponents:
     - name: dev-tools
