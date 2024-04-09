@@ -4,6 +4,12 @@
 			"path": "."
 		},
 		{
+			"path": "../container-workshop"
+		},
+		{
+			"path": "../openshift-nested-containers"
+		},
+		{
 			"name": "dev-workspace-utilities",
 			"path": "/projects/dev-workspace-utilities"
 		}
