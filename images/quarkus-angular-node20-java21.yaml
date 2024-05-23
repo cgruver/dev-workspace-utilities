@@ -1,5 +1,5 @@
 name: dev-tools/quarkus-angular
-from: image-registry.openshift-image-registry.svc:5000/dev-tools/dev-tools-base:latest
+from: image-registry.openshift-image-registry.svc:5000/devspaces-images/dev-tools-base:latest
 version: latest
 packages:
   manager: microdnf

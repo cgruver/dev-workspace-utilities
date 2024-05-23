@@ -1,5 +1,5 @@
 name: dev-tools/dev-workspace-nested
-from: registry.access.redhat.com/ubi9/ubi-minimal
+from: registry.access.redhat.com/ubi9-minimal
 version: ubi9
 packages:
   manager: microdnf
