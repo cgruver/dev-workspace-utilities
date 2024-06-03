@@ -31,6 +31,7 @@ packages:
   - bash 
   - zsh 
   - vim-enhanced
+  - vim-minimal
   - wget 
   - jq 
   - ca-certificates

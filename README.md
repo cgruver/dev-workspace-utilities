@@ -15,4 +15,7 @@ podman push quay.io/cgruver0/che/nested:latest
 
 cekit --descriptor images/nested-fedora.yaml build podman --tag quay.io/cgruver0/che/nested-fedora:latest
 podman push quay.io/cgruver0/che/nested-fedora:latest
+
+cekit --descriptor images/nested-userns.yaml build podman --tag quay.io/cgruver0/che/nested-userns:latest
+podman push quay.io/cgruver0/che/nested-userns:latest
 ```
