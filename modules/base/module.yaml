@@ -9,6 +9,9 @@ artifacts:
 - name: entrypoint-nested
   path: entrypoint-nested.sh
   target: entrypoint-nested.sh
+- name: entrypoint-userns
+  path: entrypoint-userns.sh
+  target: entrypoint-userns.sh
 envs:
 - name: HOME
   value: /home/user

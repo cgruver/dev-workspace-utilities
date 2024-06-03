@@ -1,9 +1,6 @@
 {
 	"folders": [
 		{
-			"path": "."
-		},
-		{
 			"name": "dev-workspace-utilities",
 			"path": "/projects/dev-workspace-utilities"
 		}
