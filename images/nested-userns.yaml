@@ -13,7 +13,10 @@ modules:
   - name: aws-cli
   - name: java21
   - name: maven
+  - name: node20
   - name: quarkus
+  - name: mandrel
+  - name: podman-compose
 run:
   entrypoint:
   - "/entrypoint-userns.sh"

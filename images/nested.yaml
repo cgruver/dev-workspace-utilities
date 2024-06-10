@@ -12,8 +12,10 @@ modules:
   - name: ansible
   - name: aws-cli
   - name: java21
+  - name: node20
   - name: maven
   - name: quarkus
+  - name: podman-compose
 run:
   entrypoint:
   - "/entrypoint-nested.sh"
