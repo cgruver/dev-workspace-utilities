@@ -3,6 +3,10 @@
 		{
 			"name": "dev-workspace-utilities",
 			"path": "/projects/dev-workspace-utilities"
+		},
+		{
+			"name": "redhat-cop-devspaces-images",
+			"path": "/projects/redhat-cop-devspaces-images"
 		}
 	],
 	"extensions": {
