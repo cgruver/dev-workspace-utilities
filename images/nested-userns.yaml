@@ -15,8 +15,9 @@ modules:
   - name: maven
   - name: node20
   - name: quarkus
-  - name: mandrel
+  - name: mandrel-java21
   - name: podman-compose
+  - name: localstack
 run:
   entrypoint:
   - "/entrypoint-userns.sh"
