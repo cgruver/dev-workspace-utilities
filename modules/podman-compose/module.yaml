@@ -7,5 +7,6 @@ packages:
   - python3-pip
   - python3-devel
   - podman
+  - aardvark-dns
 execute:
 - script: install.sh

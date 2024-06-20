@@ -1,0 +1,32 @@
+schemaVersion: 2.2.2
+metadata:
+  name: my-sample-devfile
+  version: 1.0.0
+  description: "A sample devfile to demonstrate ConfigMap mounting"
+
+components:
+  - name: cm-config-volume
+    openshift:
+      deployByDefault: true
+      inlined: |
+        apiVersion: v1
+        kind: ConfigMap
+        metadata:
+          name: my-configmap
+          labels:
+            controller.devfile.io/mount-to-devworkspace: 'true'
+            controller.devfile.io/watch-configmap: 'true'
+          annotations:
+            controller.devfile.io/mount-as: file
+            controller.devfile.io/mount-path: /projects/config-map-data
+        data:
+          demo.txt: |
+            key1=value1
+            key2=value2
+
+  - name: my-container
+    container:
+      image: quay.io/cgruver0/che/cekit-builder:latest
+      memoryLimit: 512Mi
+      mountSources: true
+

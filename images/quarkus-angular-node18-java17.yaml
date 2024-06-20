@@ -1,4 +1,4 @@
-name: dev-tools/quarkus-angular
+name: dev-tools/quarkus-angular-node18-java17
 from: registry.access.redhat.com/ubi9-minimal
 version: latest
 packages:
@@ -17,6 +17,7 @@ modules:
   - name: java17
   - name: maven
   - name: quarkus
+  - name: mandrel-java17
 run:
   entrypoint:
   - "/entrypoint.sh"
