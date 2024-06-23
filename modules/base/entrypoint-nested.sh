@@ -27,4 +27,4 @@ then
   (echo "HISTFILE=${HOME}/.zsh_history"; echo "HISTSIZE=1000"; echo "SAVEHIST=1000") > ${HOME}/.zshrc
 fi
 
-exec "$@"
+/usr/libexec/podman/catatonit -- "$@"
