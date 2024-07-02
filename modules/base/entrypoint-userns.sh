@@ -6,7 +6,6 @@ then
 fi
 
 mkdir -p ${HOME}/.config/containers
-(echo '[containers]';echo 'netns="private"';echo 'default_sysctls = []';echo '[engine]';echo 'network_cmd_options=[';echo '  "enable_ipv6=false"';echo ']') > ${HOME}/.config/containers/containers.conf
 (echo 'unqualified-search-registries = [';echo '  "registry.access.redhat.com",';echo '  "registry.redhat.io",';echo '  "docker.io"'; echo ']'; echo 'short-name-mode = "permissive"') > ${HOME}/.config/containers/registries.conf
 
 if ! whoami &> /dev/null
@@ -28,4 +27,4 @@ then
   (echo "HISTFILE=${HOME}/.zsh_history"; echo "HISTSIZE=1000"; echo "SAVEHIST=1000") > ${HOME}/.zshrc
 fi
 
-exec "$@"
+/usr/libexec/podman/catatonit -- "$@"
