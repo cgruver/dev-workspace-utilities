@@ -17,6 +17,8 @@ spec:
       enable: true
     pluginRegistry:
       openVSXURL: https://open-vsx.org
+    devfileRegistry:
+      disableInternalRegistry: true
   containerRegistry: {}      
   devEnvironments:       
     startTimeoutSeconds: 300
