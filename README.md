@@ -19,4 +19,5 @@ cekit --descriptor images/quarkus-angular-node20-java21.yaml build podman --tag 
 
 cekit --descriptor images/quarkus-angular-node18-java17.yaml build podman --tag quay.io/cgruver0/che/quarkus-angular-node18-java17:latest
 
+cekit --descriptor images/node20.yaml build podman --tag quay.io/cgruver0/che/node20-dev-tools:latest
 ```

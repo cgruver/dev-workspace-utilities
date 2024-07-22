@@ -24,6 +24,12 @@ echo "${USER}:${START_ID}:2147483646" > /etc/subgid
 if [ ! -f ${HOME}/.zshrc ]
 then
   (echo "HISTFILE=${HOME}/.zsh_history"; echo "HISTSIZE=1000"; echo "SAVEHIST=1000") > ${HOME}/.zshrc
+  (echo "if [ -f ${PROJECT_SOURCE}/workspace.rc ]"; echo "then"; echo "  . ${PROJECT_SOURCE}/workspace.rc"; echo "fi") >> ${HOME}/.zshrc
+fi
+
+if [ ! -f ${HOME}/.bashrc ]
+then
+  (echo "if [ -f ${PROJECT_SOURCE}/workspace.rc ]"; echo "then"; echo "  . ${PROJECT_SOURCE}/workspace.rc"; echo "fi") > ${HOME}/.bashrc
 fi
 
 exec "$@"

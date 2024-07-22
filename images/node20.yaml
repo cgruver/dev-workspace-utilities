@@ -1,0 +1,25 @@
+name: dev-tools/quarkus-angular-node20-java21
+from: registry.access.redhat.com/ubi9-minimal
+version: latest
+packages:
+  manager: microdnf
+  manager_flags: "--disableplugin=subscription-manager --setopt=tsflags=nodocs --setopt=install_weak_deps=0"
+envs:
+- name: TOOLS_DIR
+  value: /usr/local/tools
+modules:
+  repositories:
+  - path: "../modules"
+  install:
+  - name: base
+  - name: node20
+  - name: angular
+  - name: yarn
+  - name: python3
+run:
+  entrypoint:
+  - "/entrypoint.sh"
+  cmd:
+  - "tail"
+  - "-f"
+  - "/dev/null"
