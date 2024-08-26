@@ -37,24 +37,30 @@ components:
 - volume:
     size: 20Gi
   name: projects
-- name: oc-cli
+- name: prep-workspace
   container:
     args:
       - '-c'
       - >-
-        mkdir -p /projects/bin && cp /usr/bin/oc /projects/bin/oc && cp /usr/bin/kubectl /projects/bin/kubectl
+        mkdir -p /projects/bin && cp /usr/bin/oc /projects/bin/oc && cp /usr/bin/kubectl /projects/bin/kubectl && if [[ -f ${HOME}/.kube/config ]]; then rm ${HOME}/.kube/config; fi
     command:
       - /bin/bash
     image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
-    sourceMapping: /projects
     mountSources: true
-    memoryLimit: 256M
+    sourceMapping: /projects
+    memoryRequest: 128Mi
+    memoryLimit: 256Mi
+    cpuRequest: 10m
+    cpuLimit: 200m
+    env:
+    - name: HOME
+      value: "/projects/home"
 commands:
 - apply:
-    component: oc-cli
+    component: prep-workspace
     label: Copy OpenShift CLI
-  id: cp-oc-cli
+  id: prep-workspace
 events:
   preStart:
-    - cp-oc-cli
+    - prep-workspace
 

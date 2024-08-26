@@ -1,5 +1,5 @@
 schema_version: 1
-name: java`1
+name: java11
 version: v1.0
 description: "Installs JDK 11"
 envs:
