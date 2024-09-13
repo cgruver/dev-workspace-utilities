@@ -2,4 +2,4 @@
 
 npm install -g @angular/cli
 npm install -g serverless
-chmod -R g=u ${HOME}/.npm
+rm -rf ${HOME}/.npm

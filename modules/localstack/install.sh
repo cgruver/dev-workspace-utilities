@@ -5,3 +5,4 @@ curl -fsSL -o ${TEMP_DIR}/localstack.tgz https://github.com/localstack/localstac
 tar -xzf ${TEMP_DIR}/localstack.tgz -C /usr/local/bin
 rm -rf "${TEMP_DIR}"
 npm install -g serverless
+rm -rf ${HOME}/.npm

@@ -4,7 +4,7 @@ version: v1.0
 description: "Installs NodeJS v20"
 args:
 - name: NODE_VERSION
-  value: v20.15.1
+  value: v20.17.0
 envs:
 - name: PATH
   value: ${PATH}:/usr/local/node/bin
