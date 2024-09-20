@@ -43,5 +43,7 @@ packages:
   - fuse-overlayfs
   - slirp4netns
   - python3.9
+  - qemu-user-static
+  - qemu-user-binfmt
 execute:
 - script: init.sh

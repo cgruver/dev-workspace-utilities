@@ -1,0 +1,28 @@
+name: dev-tools/quarkus-do378
+from: registry.access.redhat.com/ubi9-minimal
+version: latest
+packages:
+  manager: microdnf
+  manager_flags: "--disableplugin=subscription-manager --setopt=tsflags=nodocs --setopt=install_weak_deps=0"
+envs:
+- name: TOOLS_DIR
+  value: /usr/local/tools
+modules:
+  repositories:
+  - path: "../modules"
+  install:
+  - name: base
+  - name: node20
+  - name: angular
+  - name: java21
+  - name: maven
+  - name: quarkus
+  - name: mandrel-java17
+  - name: yq
+run:
+  entrypoint:
+  - "/entrypoint.sh"
+  cmd:
+  - "tail"
+  - "-f"
+  - "/dev/null"

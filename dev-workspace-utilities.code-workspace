@@ -7,6 +7,9 @@
 		{
 			"name": "redhat-cop-devspaces-images",
 			"path": "/projects/redhat-cop-devspaces-images"
+		},
+		{
+			"path": "../ocp-4-17-nested-container-tech-preview"
 		}
 	],
 	"extensions": {
