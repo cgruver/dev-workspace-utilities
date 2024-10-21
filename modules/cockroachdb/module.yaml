@@ -4,6 +4,6 @@ version: v1.0
 description: "CockroachDB"
 args:
 - name: COCKROACH_VERSION
-  value: v24.2.0
+  value: v24.2.2
 execute:
 - script: install.sh

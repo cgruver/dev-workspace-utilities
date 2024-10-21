@@ -1,0 +1,20 @@
+name: dev-tools/dev-workspace-nested-fedora-qemu
+from: quay.io/fedora/fedora:40
+version: latest
+packages:
+  manager: dnf
+  manager_flags: "--setopt=tsflags=nodocs --setopt=install_weak_deps=0"
+modules:
+  repositories:
+  - path: "../modules"
+  install:
+  - name: fedora-base
+  - name: fedora-qemu
+  - name: node18
+run:
+  entrypoint:
+  - "/entrypoint-nested.sh"
+  cmd:
+  - "tail"
+  - "-f"
+  - "/dev/null"

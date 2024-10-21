@@ -1,0 +1,11 @@
+schema_version: 1
+name: fedora-qemu
+version: v1.0
+description: "Install Qemu Support for multi-arch"
+packages:
+  install:
+  - qemu-user-static
+  - qemu-user-binfmt
+  - qemu-system-aarch64
+  - virt-install
+

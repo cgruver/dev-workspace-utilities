@@ -6,7 +6,7 @@ then
 fi
 
 mkdir -p ${HOME}/.config/containers
-(echo '[containers]';echo 'netns="private"';echo 'default_sysctls = []';echo '[engine]';echo 'network_cmd_options=[';echo '  "enable_ipv6=false"';echo ']') > ${HOME}/.config/containers/containers.conf ; \
+(echo 'unqualified-search-registries = [';echo '  "registry.access.redhat.com",';echo '  "registry.redhat.io",';echo '  "docker.io"'; echo ']'; echo 'short-name-mode = "permissive"') > ${HOME}/.config/containers/registries.conf
 (echo '[storage]';echo 'driver = "overlay"';echo 'graphroot = "/tmp/graphroot"';echo '[storage.options.overlay]';echo 'mount_program = "/usr/bin/fuse-overlayfs"') > ${HOME}/.config/containers/storage.conf
 
 if ! whoami &> /dev/null
@@ -19,12 +19,14 @@ then
 fi
 USER=$(whoami)
 START_ID=$(( $(id -u)+1 ))
-echo "${USER}:${START_ID}:2147483646" > /etc/subuid
-echo "${USER}:${START_ID}:2147483646" > /etc/subgid
+END_ID=$(( 65536-${START_ID} ))
+echo "${USER}:${START_ID}:${END_ID}" > /etc/subuid
+echo "${USER}:${START_ID}:${END_ID}" > /etc/subgid
 
 if [ ! -f ${HOME}/.zshrc ]
 then
   (echo "HISTFILE=${HOME}/.zsh_history"; echo "HISTSIZE=1000"; echo "SAVEHIST=1000") > ${HOME}/.zshrc
+  (echo "if [ -f ${PROJECT_SOURCE}/workspace.rc ]"; echo "then"; echo "  . ${PROJECT_SOURCE}/workspace.rc"; echo "fi") >> ${HOME}/.zshrc
 fi
 
-exec "$@"
+/usr/libexec/podman/catatonit -- "$@"

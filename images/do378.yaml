@@ -17,11 +17,11 @@ modules:
   - name: java21
   - name: maven
   - name: quarkus
-  - name: mandrel-java17
+  - name: mandrel-java21
   - name: yq
 run:
   entrypoint:
-  - "/entrypoint.sh"
+  - "/entrypoint-userns.sh"
   cmd:
   - "tail"
   - "-f"
