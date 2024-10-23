@@ -10,7 +10,7 @@ COPY --chown=0:0 entrypoint.sh /
 
 # Note: compat-openssl11 & libbrotli are needed for che-code (Che build of VS Code)
 
-RUN microdnf --disableplugin=subscription-manager install -y openssl compat-openssl11 libbrotli git tar which shadow-utils bash zsh wget jq podman buildah skopeo python3-pip python3-devel; \
+RUN microdnf --disableplugin=subscription-manager install -y openssl compat-openssl11 libbrotli git tar which shadow-utils bash zsh wget jq podman buildah skopeo python3-pip python3-devel fuse-overlayfs; \
     microdnf update -y ; \
     microdnf clean all ; \
     mkdir -p ${USER_HOME_DIR} ; \
