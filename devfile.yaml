@@ -24,7 +24,12 @@ components:
     pod-overrides:
       metadata:
         annotations:
-          io.kubernetes.cri-o.Devices: "/dev/fuse"
+          io.kubernetes.cri-o.Devices: "/dev/fuse,/dev/net/tun"
+      spec:
+        hostUsers: false
+    container-overrides: 
+      securityContext:
+        procMount: Unmasked
   container:
     # image: image-registry.openshift-image-registry.svc:5000/devspaces-images/cekit-builder:latest 
     image: quay.io/cgruver0/che/cekit-builder:latest
