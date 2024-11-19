@@ -14,3 +14,5 @@ ln -s ../quarkus-cli/bin/quarkus quarkus
 mkdir -p ${JBANG_DIR}
 curl -Ls https://sh.jbang.dev | bash -s - app setup
 ln -s ${JBANG_DIR}/bin/jbang /usr/local/bin/jbang
+cp /tmp/artifacts/new-project.sh /usr/local/bin/new-project.sh
+chmod 554 /usr/local/bin/new-project.sh

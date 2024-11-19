@@ -17,7 +17,7 @@ modules:
   - name: podman-compose
 run:
   entrypoint:
-  - "/entrypoint-nested.sh"
+  - "/entrypoint-userns.sh"
   cmd:
   - "tail"
   - "-f"

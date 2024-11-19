@@ -29,3 +29,10 @@ cekit --descriptor images/cajun-navy.yaml build podman --tag quay.io/cgruver0/ch
 
 cekit --descriptor images/do378.yaml build podman --tag quay.io/cgruver0/che/do378:latest
 ```
+
+## Local Nexus
+
+```bash
+cekit --descriptor images/cajun-navy.yaml build podman --tag nexus.clg.lab:5002/dev-spaces/cajun-navy:latest
+podman push --cert-dir /public-certs nexus.clg.lab:5002/dev-spaces/cajun-navy:latest
+```
