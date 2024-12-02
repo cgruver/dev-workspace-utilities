@@ -17,6 +17,8 @@ modules:
   - name: podman-compose
 run:
   entrypoint:
+  - "/usr/libexec/podman/catatonit"
+  - "--"
   - "/entrypoint-userns.sh"
   cmd:
   - "tail"
